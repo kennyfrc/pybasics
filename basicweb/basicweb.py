@@ -33,6 +33,7 @@ class add:
     def POST(self):
         i = web.input()
         n = db.insert('todo', title=i.title)
+        # redirects back to the home page 303
         raise web.seeother('/')
 
 
