@@ -7,3 +7,6 @@ Learning project for python
 * As needed, initialize some forms / values
 * Interact with Model (DB) to do CRUD actions (and set DB there)
 * After doing the DB action, render the view
+
+Some insights
+* Learned form remixing tutorials and reading the code within
