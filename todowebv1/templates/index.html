@@ -9,13 +9,11 @@ $for todo in todos:
     <tr>
         <td>$todo.title</td>
         <td>
-            <form action="/del/$todo.id" method="post">
-                <input type="submit" value="Delete"/>
-            </form>
+            <a href="/edit/$todo.id">Edit</a>
         </td>
     </tr>    
 </table>  
 
 <form action="" method="post">
-$:form.render()
+$:form.render() <!-- the colon just ensures that you're using a var, not a reserved kw at the start -->
 </form>

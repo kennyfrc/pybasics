@@ -1,0 +1,11 @@
+$def with (todo, form)
+
+<h1>Edit $todo.title</h1>
+
+<form action="" method="post">
+$:form.render()
+</form>
+
+<form action="/del/$todo.id" method="post">
+    <input type="submit" value="Delete"/>
+</form>
