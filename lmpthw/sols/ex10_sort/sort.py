@@ -1,4 +1,5 @@
 import sys
+import pdb
 
 lines = []
 
@@ -9,7 +10,10 @@ else:
     while True:
         try:
             line = input() + "\n"
+            # pdb.set_trace()
             lines.append(line)
+            print(sorted(lines))
+            
         except EOFError:
             break
 

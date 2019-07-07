@@ -20,11 +20,11 @@ print(">>> parsed args: ", args)
 
 line_number = 1
 for in_file_name in args.files:
-    pdb.set_trace()
 	# in_file is a TextIOWrapper which inherits from TextIOBaseClass
 	# Base class for text streams. This class provides a unicode character 
 	# and line based interface to stream I/O
     in_file = open(in_file_name)
+    pdb.set_trace()
     if args.numbers:
         for line in in_file.readlines():
         	# print(f"{}")A formatted string literal or f-string is a string literal 
