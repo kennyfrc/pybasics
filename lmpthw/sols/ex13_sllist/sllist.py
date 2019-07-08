@@ -73,4 +73,3 @@ class SingleLinkedList(object):
 
     def dump(self, mark):
         """Debugging function that dumps the contents of the list."""
-
