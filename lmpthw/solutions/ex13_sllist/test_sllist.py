@@ -37,12 +37,11 @@ def test_shift():
     colors = SingleLinkedList()
     colors.shift("Cadmium Orange")
     assert colors.count() == 1
-
     colors.shift("Carbazole Violet")
     assert colors.count() == 2
-    assert colors.pop() == "Cadmium Orange"
+    assert colors.pop() == "Carbazole Violet"
     assert colors.count() == 1
-    assert colors.pop() == "Carbazole"
+    assert colors.pop() == "Cadmium Orange"
 
 test_shift()
 

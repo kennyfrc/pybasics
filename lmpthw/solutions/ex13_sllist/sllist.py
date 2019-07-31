@@ -30,25 +30,40 @@ class SingleLinkedList(object):
 
     def pop(self):
         """Removes the last item and returns it."""
-        if self.end == None:
+        if self.end == None and self.begin == None:
             return None
         elif self.end == self.begin:
             node = self.begin
             self.end = self.begin = None
             return node.value
-        else:
+        elif self.begin != None and self.begin.next == None:
             node = self.begin
-            while node.next != self.end:
+            return node.value
+        else:
+            popped_node = self.end
+            node = self.begin
+            while node.next != self.end and node.next != None:
                 node = node.next
-            assert self.end != node
             self.end = node
-            return node.next.value
+            node.next = None
+            return popped_node.value
 
     def shift(self, obj):
-        """Another name for push."""
+        self.push(obj)
 
     def unshift(self):
         """Removes the first item and returns it."""
+        if self.begin == None:
+            return None
+        elif self.begin == self.end:
+            node = self.end
+            self.begin = self.end = None
+            return node.value
+        else:
+            unshifted_node = self.begin
+            self.begin = self.begin.next
+            assert unshifted_node != self.begin
+            return unshifted_node.value
 
     def remove(self, obj):
         """Finds a matching item and removes it from the list."""
