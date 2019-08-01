@@ -67,7 +67,7 @@ def test_first():
     colors.push("Hansa Yellow")
     assert colors.first() == "Cadmium Red Light"
     colors.shift("Pthalo Green")
-    assert colors.first() == "Pthalo Green"
+    assert colors.first() == "Cadmium Red Light"
 
 test_first()
 
@@ -78,7 +78,7 @@ def test_last ():
     colors.push("Hansa Yellow")
     assert colors.last() == "Hansa Yellow"
     colors.shift("Pthalo Green")
-    assert colors.last() == "Hansa Yellow"
+    assert colors.last() == "Pthalo Green"
 
 test_last()
 
@@ -97,9 +97,9 @@ def test_get():
     assert colors.get(0) == "Vermillion"
     assert colors.get(1) == "Sap Green"
     assert colors.get(2) == None
-    colors.pop ()
+    colors.pop()
     assert colors.get(0) == "Vermillion"
-    colors.pop ()
+    colors.pop()
     assert colors.get(0) == None
 
 test_get()
