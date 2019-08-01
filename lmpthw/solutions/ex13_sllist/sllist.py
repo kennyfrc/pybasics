@@ -1,3 +1,5 @@
+import pdb
+
 class SingleLinkedListNode(object):
 
     def __init__(self, value, nxt):
@@ -36,16 +38,13 @@ class SingleLinkedList(object):
             node = self.begin
             self.end = self.begin = None
             return node.value
-        elif self.begin != None and self.begin.next == None:
-            node = self.begin
-            return node.value
         else:
             popped_node = self.end
             node = self.begin
             while node.next != self.end and node.next != None:
                 node = node.next
             self.end = node
-            node.next = None
+            self.end.next = None
             return popped_node.value
 
     def shift(self, obj):
@@ -67,6 +66,15 @@ class SingleLinkedList(object):
 
     def remove(self, obj):
         """Finds a matching item and removes it from the list."""
+        node = self.begin
+        count = 0
+        if self.begin.value == obj:
+            self.begin = node.next
+            return count
+        while node.value != obj:
+            node = node.next
+            count += 1
+        return count
 
     def first(self):
         """Returns a *reference* to the first item, does not remove."""
