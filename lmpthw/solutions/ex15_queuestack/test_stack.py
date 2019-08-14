@@ -1,4 +1,4 @@
-from stack import *
+from stack_kenn import *
 
 def test_push():
     colors = Stack()

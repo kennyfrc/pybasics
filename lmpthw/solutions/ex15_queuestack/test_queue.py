@@ -1,4 +1,4 @@
-from queue import *
+from queue_kenn import *
 
 def test_shift():
     colors = Queue()
