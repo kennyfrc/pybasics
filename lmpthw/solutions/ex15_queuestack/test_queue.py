@@ -31,6 +31,6 @@ def test_drop():
     assert colors.count() == 2
     colors.drop()
     assert colors.count() == 1
-    assert colors.first() == "Cad Red"
+    assert colors.first() == "Hansa Yellow"
     colors.drop()
     assert colors.first() == None
