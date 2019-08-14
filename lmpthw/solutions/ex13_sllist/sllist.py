@@ -6,7 +6,12 @@ class SingleLinkedListNode(object):
         self.value = value
         self.next = nxt
 
+    # checks if next value is there. if there's no next value, then return None
+    # returns value: True/None
     def __repr__(self):
+        # repr's benefit over str is that the default 
+        # implementation of __repr__ for a str value can be 
+        # called as an argument to eval
         nval = self.next and self.next.value or None
         return f"[{self.value}:{repr(nval)}]"
 
@@ -48,6 +53,7 @@ class SingleLinkedList(object):
             return popped_node.value
 
     def shift(self, obj):
+        """same as push"""
         self.push(obj)
 
     def unshift(self):

@@ -1,4 +1,4 @@
-from dllist import *
+from dllist_kenn import *
 
 
 def test_push():
@@ -30,9 +30,9 @@ def test_unshift():
     colors.shift("Viridian")
     colors.shift("Sap Green")
     colors.shift("Van Dyke")
-    assert colors.unshift() == "Viridian"
-    assert colors.unshift() == "Sap Green"
     assert colors.unshift() == "Van Dyke"
+    assert colors.unshift() == "Sap Green"
+    assert colors.unshift() == "Viridian"
     assert colors.unshift() == None
 
 def test_shift():
@@ -43,9 +43,9 @@ def test_shift():
     colors.shift("Carbazole Violet")
     assert colors.count() == 2
 
-    assert colors.pop() == "Carbazole Violet"
-    assert colors.count() == 1
     assert colors.pop() == "Cadmium Orange"
+    assert colors.count() == 1
+    assert colors.pop() == "Carbazole Violet"
     assert colors.count() == 0
 
 def test_remove():
@@ -72,7 +72,7 @@ def test_first():
     colors.push("Hansa Yellow")
     assert colors.first() == "Cadmium Red Light"
     colors.shift("Pthalo Green")
-    assert colors.first() == "Cadmium Red Light"
+    assert colors.first() == "Pthalo Green"
 
 def test_last():
     colors = DoubleLinkedList()
@@ -81,7 +81,7 @@ def test_last():
     colors.push("Hansa Yellow")
     assert colors.last() == "Hansa Yellow"
     colors.shift("Pthalo Green")
-    assert colors.last() == "Pthalo Green"
+    assert colors.last() == "Hansa Yellow"
 
 def test_get():
     colors = DoubleLinkedList()
